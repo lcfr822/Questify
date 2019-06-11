@@ -9,7 +9,9 @@ namespace Questify.Quests
     //public class Quest : IQuest
     public class Quest
     {
+        [Tooltip("Give this quest a name.")]
         public string Name = "New Quest";
+        [Tooltip("Briefly describe the story of the quest.")]
         public string Description = "New Quest Description";
         public QuestStage ActiveQuestStage = null;
         public List<QuestStage> QuestStages = new List<QuestStage>();
@@ -22,6 +24,11 @@ namespace Questify.Quests
             if(QuestStages[0] != null) { ActiveQuestStage = QuestStages[0]; }
         }
 
+        /// <summary>
+        /// Retrieve a QuestStage using it's name.
+        /// </summary>
+        /// <param name="name">String representing a QuestStage.</param>
+        /// <returns></returns>
         public QuestStage GetStageByName(string name)
         {
             if(QuestStages.Where(x => x.stageName == name) != null) { return QuestStages.Where(x => x.stageName == name) as QuestStage; }
@@ -40,7 +47,9 @@ namespace Questify.Quests
     [System.Serializable]
     public class QuestStage
     {
+        [Tooltip("Give this Quest Stage a name.")]
         public string stageName = "New Quest Stage Name";
+        [Tooltip("Briefly describe the action(s) necessary to complete this Quest Stage.")]
         public string stageDescription = "New Quest Stage Description";
 
         public bool stageHidden = false;

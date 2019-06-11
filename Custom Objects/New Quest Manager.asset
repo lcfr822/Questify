@@ -16,8 +16,8 @@ MonoBehaviour:
   - Name: Test Quest
     Description: Quest to test save/ load functionality.
     ActiveQuestStage:
-      stageName: 
-      stageDescription: 
+      stageName: Test Stage
+      stageDescription: This stage tests savel/ load of stages.
       stageHidden: 0
       completed: 0
       failed: 0
@@ -36,8 +36,8 @@ MonoBehaviour:
     Description: You received a note from your benefactor saying to meet them at 123
       Main Street, Apartment 601.
     ActiveQuestStage:
-      stageName: 
-      stageDescription: 
+      stageName: An Inauspicious Start
+      stageDescription: Investigate why the building is surrounded by cops.
       stageHidden: 0
       completed: 0
       failed: 0
@@ -49,6 +49,11 @@ MonoBehaviour:
       failed: 0
     - stageName: Infiltrate the building.
       stageDescription: Find a way into the apartment building.
+      stageHidden: 0
+      completed: 0
+      failed: 0
+    - stageName: It's a Trap!
+      stageDescription: Get out now the cops think it was you!
       stageHidden: 0
       completed: 0
       failed: 0

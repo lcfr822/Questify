@@ -91,11 +91,17 @@ public class QuestManagerEditorWindow : EditorWindow
             if (current.name == "QuestStages") { m_QuestStages = current; break; }
         }
         m_QuestStage = m_QuestStages.GetArrayElementAtIndex(questStageIndex);
+        SerializedProperty questStageName = m_QuestStage.FindPropertyRelative("stageName");
+        SerializedProperty questStageDescription = m_QuestStage.FindPropertyRelative("stageDescription");
 
         InsertGUISpaces(2);
+        EditorGUILayout.LabelField("Quest[" + questIndex + "]: " + m_QManager.Quests[questIndex].Name);
         EditorGUILayout.PropertyField(questName);
         EditorGUILayout.PropertyField(questDescription);
-        EditorGUILayout.PropertyField(m_QuestStage, true);
+        InsertGUISpaces(2);
+        EditorGUILayout.LabelField("Stage[" + questStageIndex + "]: " + m_QManager.Quests[questIndex].QuestStages[questStageIndex].stageName);
+        EditorGUILayout.PropertyField(questStageName);
+        EditorGUILayout.PropertyField(questStageDescription);
 
         EditorGUI.EndChangeCheck();
         // End Modification Control

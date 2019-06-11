@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c3b43fa89e8244480f48a7a4092468, type: 3}
+  m_Name: New Quest Manager
+  m_EditorClassIdentifier: 
+  Quests:
+  - Name: Test Quest
+    Description: Quest to test save/ load functionality.
+    ActiveQuestStage:
+      stageName: 
+      stageDescription: 
+      stageHidden: 0
+      completed: 0
+      failed: 0
+    QuestStages:
+    - stageName: Test Stage
+      stageDescription: This stage tests savel/ load of stages.
+      stageHidden: 0
+      completed: 0
+      failed: 0
+    - stageName: Hidden Test Stage
+      stageDescription: This stage tests savel/ load of hidden stages.
+      stageHidden: 1
+      completed: 0
+      failed: 0
+  - Name: Arise
+    Description: You received a note from your benefactor saying to meet them at 123
+      Main Street, Apartment 601.
+    ActiveQuestStage:
+      stageName: 
+      stageDescription: 
+      stageHidden: 0
+      completed: 0
+      failed: 0
+    QuestStages:
+    - stageName: An Inauspicious Start
+      stageDescription: Investigate why the building is surrounded by cops.
+      stageHidden: 0
+      completed: 0
+      failed: 0
+    - stageName: Infiltrate the building.
+      stageDescription: Find a way into the apartment building.
+      stageHidden: 0
+      completed: 0
+      failed: 0

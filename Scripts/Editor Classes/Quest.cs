@@ -35,6 +35,8 @@ namespace Questify.Quests
             else { return null; }
         }
 
+        public void CompleteQuestStage()
+
         public override string ToString()
         {
             string questString = Name + "\n";

@@ -23,6 +23,7 @@ namespace Questify.Runtime
         private int numberOfLogs = 0;
 
         private int tempQuestIndex = 0; // Allows cycling of test quests.
+        private QuestGiver tempQuestGiver; // Temporary quest giver for debugging UI.
 
         public List<Quest> activeQuests = new List<Quest>();
         public List<GameObject> activeQuestObjects = new List<GameObject>();
@@ -32,6 +33,7 @@ namespace Questify.Runtime
         void Start()
         {
             logGroup = GetComponent<CanvasGroup>();
+            tempQuestGiver = FindObjectOfType<QuestGiver>();
             content.sizeDelta = new Vector2(0, numberOfLogs * 200);
             ShowHideLogGroup();
         }
@@ -42,8 +44,15 @@ namespace Questify.Runtime
             if (Input.GetKeyDown(KeyCode.L)) { ShowHideLogGroup(); }
 
             // DEBUG COMMANDS
-            if (Input.GetKeyDown(KeyCode.N) && tempQuestIndex < questManager.Quests.Count) { InitiateQuest(questManager.Quests[tempQuestIndex]); tempQuestIndex++; }
-            else if (Input.GetKeyDown(KeyCode.P) && tempQuestIndex > 0) { Debug.Log(tempQuestIndex - 1 + ", " + (questManager.Quests.Count)); RemoveQuestFromLog(questManager.Quests[tempQuestIndex - 1]); tempQuestIndex--; }
+            if (Input.GetKeyDown(KeyCode.N) && tempQuestIndex < tempQuestGiver.ownedQuests.Count) { tempQuestGiver.AssignOwnedQuest(tempQuestIndex); tempQuestIndex++; }
+            else if (Input.GetKeyDown(KeyCode.P) && tempQuestIndex > 0) { RemoveQuestFromLog(activeQuests[tempQuestIndex - 1]); tempQuestIndex--; }
+        }
+
+        public void GiveQuest(Quest quest)
+        {
+            quest.ActiveQuestStage = quest.QuestStages[0];
+            activeQuests.Add(quest);
+            AddQuestToLog(quest);
         }
 
         public void InitiateQuest(Quest quest)

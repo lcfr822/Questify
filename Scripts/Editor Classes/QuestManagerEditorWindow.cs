@@ -70,6 +70,8 @@ public class QuestManagerEditorWindow : EditorWindow
         m_Quest = m_Quests.GetArrayElementAtIndex(questIndex);
         SerializedProperty questName = m_Quest.FindPropertyRelative("Name");
         SerializedProperty questDescription = m_Quest.FindPropertyRelative("Description");
+        SerializedProperty questRewardType = m_Quest.FindPropertyRelative("RewardTypes");
+        SerializedProperty questReward = m_Quest.FindPropertyRelative("QuestReward");
 
         // Begin Modification Control
         EditorGUI.BeginChangeCheck();
@@ -93,15 +95,20 @@ public class QuestManagerEditorWindow : EditorWindow
         m_QuestStage = m_QuestStages.GetArrayElementAtIndex(questStageIndex);
         SerializedProperty questStageName = m_QuestStage.FindPropertyRelative("stageName");
         SerializedProperty questStageDescription = m_QuestStage.FindPropertyRelative("stageDescription");
+        SerializedProperty questStageHidden = m_QuestStage.FindPropertyRelative("stageHidden");
+        SerializedProperty questStageOptional = m_QuestStage.FindPropertyRelative("stageOptional");
 
         InsertGUISpaces(2);
         EditorGUILayout.LabelField("Quest[" + questIndex + "]: " + m_QManager.Quests[questIndex].Name);
         EditorGUILayout.PropertyField(questName);
         EditorGUILayout.PropertyField(questDescription);
+        EditorGUILayout.PropertyField(questReward);
         InsertGUISpaces(2);
         EditorGUILayout.LabelField("Stage[" + questStageIndex + "]: " + m_QManager.Quests[questIndex].QuestStages[questStageIndex].stageName);
         EditorGUILayout.PropertyField(questStageName);
         EditorGUILayout.PropertyField(questStageDescription);
+        EditorGUILayout.PropertyField(questStageHidden);
+        EditorGUILayout.PropertyField(questStageOptional);
 
         EditorGUI.EndChangeCheck();
         // End Modification Control

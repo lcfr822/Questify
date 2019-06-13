@@ -13,6 +13,9 @@ namespace Questify.Quests
         public string Name = "New Quest";
         [Tooltip("Briefly describe the story of the quest.")]
         public string Description = "New Quest Description";
+        [Tooltip("Reward granted upon Quest completion.")]
+        public QuestReward QuestReward = null;
+        public int currentStageIndex = 0;
         public QuestStage ActiveQuestStage = null;
         public List<QuestStage> QuestStages = new List<QuestStage>();
 
@@ -21,7 +24,7 @@ namespace Questify.Quests
             Name = questName;
             Description = questDescription;
             QuestStages = questStages;
-            if(QuestStages[0] != null) { ActiveQuestStage = QuestStages[0]; }
+            if(QuestStages[currentStageIndex] != null) { ActiveQuestStage = QuestStages[currentStageIndex]; }
         }
 
         /// <summary>
@@ -35,7 +38,21 @@ namespace Questify.Quests
             else { return null; }
         }
 
-        public void CompleteQuestStage()
+        public void SetActiveStage(int stageIndex)
+        {
+            ActiveQuestStage = QuestStages[stageIndex];
+        }
+
+        public void CompleteQuest()
+        {
+            
+        }
+
+        public void CompleteQuestStage(Quest quest, int stageIndex)
+        {
+            quest.QuestStages[stageIndex].completed = true;
+            quest.currentStageIndex++;
+        }
 
         public override string ToString()
         {
@@ -55,6 +72,7 @@ namespace Questify.Quests
         public string stageDescription = "New Quest Stage Description";
 
         public bool stageHidden = false;
+        public bool stageOptional = false;
         public bool completed = false;
         public bool failed = false;
 

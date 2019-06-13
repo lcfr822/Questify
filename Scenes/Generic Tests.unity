@@ -216,6 +216,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ownedQuests:
+  - Name: Test Quest
+    Description: Quest to test save/ load functionality.
+    QuestReward: {fileID: 0}
+    currentStageIndex: 0
+    ActiveQuestStage:
+      stageName: Test Stage
+      stageDescription: This stage tests savel/ load of stages.
+      stageHidden: 0
+      stageOptional: 0
+      completed: 0
+      failed: 0
+    QuestStages:
+    - stageName: Test Stage
+      stageDescription: This stage tests savel/ load of stages.
+      stageHidden: 0
+      stageOptional: 0
+      completed: 0
+      failed: 0
+    - stageName: Hidden Test Stage
+      stageDescription: This stage tests savel/ load of hidden stages.
+      stageHidden: 1
+      stageOptional: 0
+      completed: 0
+      failed: 0
   - Name: Arise
     Description: You received a note from your benefactor saying to meet them at 123
       Main Street, Apartment 601.
@@ -244,30 +268,6 @@ MonoBehaviour:
     - stageName: It's a Trap!
       stageDescription: Get out now the cops think it was you!
       stageHidden: 0
-      stageOptional: 0
-      completed: 0
-      failed: 0
-  - Name: Test Quest
-    Description: Quest to test save/ load functionality.
-    QuestReward: {fileID: 0}
-    currentStageIndex: 0
-    ActiveQuestStage:
-      stageName: Test Stage
-      stageDescription: This stage tests savel/ load of stages.
-      stageHidden: 0
-      stageOptional: 0
-      completed: 0
-      failed: 0
-    QuestStages:
-    - stageName: Test Stage
-      stageDescription: This stage tests savel/ load of stages.
-      stageHidden: 0
-      stageOptional: 0
-      completed: 0
-      failed: 0
-    - stageName: Hidden Test Stage
-      stageDescription: This stage tests savel/ load of hidden stages.
-      stageHidden: 1
       stageOptional: 0
       completed: 0
       failed: 0
@@ -751,7 +751,7 @@ PrefabInstance:
     - target: {fileID: 3897994304281994195, guid: bb0f2b70ff3c9b2458f378cfc6199037,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000010937839
+      value: 0.0009872068
       objectReference: {fileID: 0}
     - target: {fileID: 3897994303115732625, guid: bb0f2b70ff3c9b2458f378cfc6199037,
         type: 3}
@@ -762,6 +762,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897994303325332860, guid: bb0f2b70ff3c9b2458f378cfc6199037,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897994303325332860, guid: bb0f2b70ff3c9b2458f378cfc6199037,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 220.54308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897994303727372502, guid: bb0f2b70ff3c9b2458f378cfc6199037,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897994303727372502, guid: bb0f2b70ff3c9b2458f378cfc6199037,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1080.2119
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897994303727372502, guid: bb0f2b70ff3c9b2458f378cfc6199037,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1813.1001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897994303727372502, guid: bb0f2b70ff3c9b2458f378cfc6199037,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897994303727372502, guid: bb0f2b70ff3c9b2458f378cfc6199037,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1192.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897994303727372502, guid: bb0f2b70ff3c9b2458f378cfc6199037,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb0f2b70ff3c9b2458f378cfc6199037, type: 3}
